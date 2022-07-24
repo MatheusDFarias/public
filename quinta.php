@@ -1,0 +1,216 @@
+<?php
+
+echo'
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: gray;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #000;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #e9e4e4;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #e9e4e4 transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.contido {
+  padding: 20px 30px;
+  background-color: #e9e4e4;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #e9e4e4 transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+  <div class="timeline">
+    <div class="container left">
+      <div class="contido">
+        <h4>às 00h30</h4>
+        <a href="https://comshalom.org/festival-halleluya-saiba-como-receber-oracao-online/" target="_blank">
+          <p><strong>Se você está participando da transmissão do Halleluya e deseja receber oração,clique aqui e saiba como.
+      
+        </a>
+         <img style="width: 100%;" src="https://comshalom.org/wp-content/uploads/2022/07/Festival-Halleluya-saiba-como-receber-oracao-online-840x560.jpeg"/>
+  
+      </div>
+    </div>
+    <div class="container right">
+      <div class="contido">
+        <h4>às 23h00</h4>
+        <a href="https://comshalom.org/festival-halleluya-oferece-aos-participantes-a-oportunidade-de-ajudar-a-quem-precisa" target="_blank">
+        <p>       
+          <strong> Halleluya oferece aos participantes a oportunidade de ajudar a quem precisa.</strong>
+               São três experiências baseadas na mesma verdade: o amor que é decisão por doar-se pelo outro.
+        </p></a>
+        <img style="width: 100%;" src="https://comshalom.org/wp-content/uploads/2022/07/Festival-Halleluya-oferece-aos-participantes-a-oportunidade-de-ajudar-a-quem-precisa-840x558.jpeg"/>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="contido">
+        <h4>às 22h00</h4>
+          <a href="https://comshalom.org/no-halleluya-ziza-fernandes-partilha-sobre-encontro-com-deus-com-a-igreja-e-jmj-2023/" target="_blank"> 
+            <p>
+           <strong> Halleluya: Ziza Fernandes partilha sobre encontro com Deus, com a Igreja e a JMJ 2023.</strong>
+            A artista durante o evento relembrou sua experiência com o Senhor.</p>
+          </a>    
+            <img style="width: 100%;" src="https://comshalom.org/wp-content/uploads/2022/07/No-Halleluya-Ziza-Fernandes-partilha-sobre-encontro-com-Deus-com-a-Igreja-e-JMJ-2023-840x398.jpeg"/>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="contido">
+        <h4>às 21h00</h4>
+          <a href="https://comshalom.org/halleluya-diversos-publicos-e-uma-unica-experiencia/" target="_blank">
+          <p><strong>Halleluya: diversos públicos e uma única experiência</strong> 
+            Participantes contam que renovaram sua amizade com o Ressuscitado.
+          </a> 
+          <img style="width: 100%;" src="https://comshalom.org/wp-content/uploads/2022/07/HALLELUYA220722GS2-11-840x560.jpg"/>
+          </p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="contido">
+        <h4>às 20h00</h4>
+        <a href="https://comshalom.org/a-unidade-dos-carismas-permite-uma-igreja-em-saida-no-festival-halleluya/" target="_blank">
+          <p>A unidade dos carismas e força da evangelização no Festival Halleluya
+          Essa experiência pode ser contemplada nos stands, na arena e até mesmo no palco do evento.</p></a>
+          <img style="width: 100%;" src="https://comshalom.org/wp-content/uploads/2022/07/A-unidade-dos-Carismas-permite-uma-Igreja-em-saida-no-Festival-Halleluya-840x560.jpeg"/>
+  
+          
+      </div>
+    </div>
+    <div class="container right">
+      <div class="contido">
+        <h4>às 18h00</h4>
+        <a href="https://comshalom.org/alegria-dos-artistas-do-palco-alive-e-fruto-da-experiencia-com-deus/" target="_blank">
+          <p><strong>Alegria dos artistas do palco Alive é fruto da experiência com Deus.</strong>
+          O segundo dia do Festival Halleluya foi recheado da diversidade de sons que só pode ser obra do Espírito Santo de Deus.
+        </p> </a>
+        <img style="width: 100%;" src="https://comshalom.org/wp-content/uploads/2022/07/HALLELUYA210722gs-18-840x560.jpg"/>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>'
